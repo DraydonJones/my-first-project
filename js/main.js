@@ -22,8 +22,9 @@ function login() {
   if(usernameValue==='Draydon'){ 
     showImages()
   } else {
+    showImages() // For debugging (remove)
   
-  alert('wrong user name')
+  // alert('wrong user name')
   }
 }
 
@@ -38,17 +39,28 @@ function showImages() {
 
   let i = 0
   while (i <= 4) {
-    let h1 = document.createElement('h1')
+    let div = document.createElement('div')
     let img = document.createElement('img')
-    h1.innerHTML = images[0][i].title
-    div2.appendChild(h1)
+
+    div.innerHTML = images[0][i].title
+    div.className = 'imageTitle'
+    div2.appendChild(div)
     img.src = images[0][i].url
-    h1.appendChild(img)
+    img.className = 'image'
+    div.appendChild(img)
     console.log(img) 
-    console.log(h1) 
+    console.log(div) 
   i++
   }
 } 
+console.log(images)
 
 
+ const Image = {
+  albumId: 1,
+id: 1,
+thumbnailUrl: "https://via.placeholder.com/150/92c952",
+title: "accusamus beatae ad facilis cum similique qui sunt",
+url: "https://via.placeholder.com/600/92c952"
+}
 
